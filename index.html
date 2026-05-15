@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pretty Little Things +254</title>
+
+    <!-- Google Fonts: Added Playfair Display for the formal top header -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<header class="topbar">
+    <div class="brand-identity">
+        <!-- FORMAL HEADER: Now at the top, bold and outright legible -->
+        <h1 class="brand-name">PRETTY LITTLE THINGS 254</h1>
+
+        <!-- FANCY SECTION: The stylized plt 254 signature below -->
+        <div class="plt-fancy">
+            <span>plt 254</span>
+        </div>
+    </div>
+</header>
+
+<!-- BRAND SECTION -->
+<section class="brand-idea">
+  <h2>🛍 Fashion • Home • Lifestyle</h2>
+  <p>Delivery Available | Discounts Available</p>
+</section>
+
+<!-- CART BUTTON -->
+<button id="cartFab">
+  🛒 <span id="cartCount">0</span>
+</button>
+
+<!-- CART DRAWER -->
+<div id="cartDrawer">
+  <div class="drawer-head">
+    <h3>Your Cart</h3>
+    <button id="closeCart">✕</button>
+  </div>
+  <div id="cartBox"></div>
+  <h3 id="cartTotal">Total: KSh 0</h3>
+  <button id="clearCartBtn">Clear Cart</button>
+  <a id="checkoutLink" class="checkout-btn" href="#">
+    Checkout on WhatsApp
+  </a>
+  <div class="mpesa-box">
+    <h4>M-Pesa Payment</h4>
+    <p>Till: <strong>192461</strong></p>
+    <button id="copyTill">Copy Till Number</button>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<div class="category-bar">
+  <button class="cat-btn active" data-cat="all">All</button>
+  <button class="cat-btn" data-cat="living room essentials">Living room essentials</button>
+  <button class="cat-btn" data-cat="utensils">Kitchen</button>
+  <button class="cat-btn" data-cat="bathroom">Bathroom</button>
+  <button class="cat-btn" data-cat="travel">Travel</button>
+  <button class="cat-btn" data-cat="bedroom">Bedroom</button>
+</div>
+
+<!-- PRODUCTS -->
+<div class="grid" id="productGrid"></div>
+
+<!-- FOOTER ADMIN BUTTON -->
+<footer class="footer-admin">
+    <a href="admin.html" class="admin-corner-link">
+      <span class="admin-icon">👤</span>
+    </a>
+</footer>
+
+<!-- FIREBASE -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAWj2k3nurvBGfMuKVHmapRCBb1OJIMf90",
+    authDomain: "pretty-little-things-667bc.firebaseapp.com",
+    databaseURL: "https://pretty-little-things-667bc-default-rtdb.firebaseio.com",
+    projectId: "pretty-little-things-667bc",
+    storageBucket: "pretty-little-things-667bc.firebasestorage.app",
+    messagingSenderId: "168938596258",
+    appId: "1:168938596258:web:3a1109f202c1b8b322f4fb",
+    measurementId: "G-1LG1SGVQYJ"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+  window.db = db;
+
+  console.log("Pretty Little Things Database: Connected");
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

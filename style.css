@@ -15,55 +15,50 @@ body {
 /* --- 2. THE TOP BAR --- */
 .topbar {
     background-color: #d63031;
-    padding: 25px 80px 15px 0; 
+    padding: 30px 20px 20px 20px; /* Adjusted padding for better balance */
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
-/* --- 3. LOGO --- */
+/* --- 3. BRAND IDENTITY (HEADER) --- */
 .brand-identity {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 5px;
 }
 
-.plt-monogram {
-    position: relative;
-    font-family: 'Great Vibes', cursive;
-    font-size: 58px;
-    color: white;
-    line-height: 0.6;
-}
-
-.plt-monogram .overlap {
-    margin-left: -16px;
-    position: relative;
-    z-index: 2;
-}
-
-.plt-monogram .suffix {
-    margin-left: -12px;
-}
-
-.diamond {
-    width: 8px;
-    height: 8px;
-    background: white;
-    transform: rotate(45deg);
-    position: absolute;
-    bottom: -5px;
-    left: calc(50% - 4px);
-}
-
+/* FORMAL TOP TEXT: Bold and outright legible */
 .brand-name {
-    font-size: 11px;
-    color: rgba(255,255,255,0.9);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem; /* Large and clear */
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 6px;
-    font-weight: 300;
-    margin-top: 12px;
-    border-top: 0.5px solid rgba(255,255,255,0.3);
-    padding-top: 6px;
+    letter-spacing: 3px;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    border: none; /* Removed the old border-top */
+}
+
+/* FANCY BOTTOM TEXT: plt 254 Signature */
+.plt-fancy {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.8rem;
+    margin-top: -10px;
+    display: inline-block;
+    
+    /* Luxury Gold Shimmer Effect */
+    background: #bf953f; /* Fallback color */
+    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    
+    /* Critical for the text-shimmer effect */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.4));
 }
 
 /* --- 4. BRAND SECTION --- */
@@ -102,6 +97,7 @@ body {
     font-size: 0.8rem;
     font-weight: 600;
     transition: all 0.2s ease;
+    white-space: nowrap;
 }
 
 .cat-btn.active {
@@ -141,10 +137,10 @@ body {
 
 .product-card img {
     width: 100%;
-    height: 180px; /* Increased slightly for better shoe display */
+    height: 180px; 
     object-fit: cover;
     border-radius: 10px;
-    background-color: #f9f9f9; /* Fallback for transparent images */
+    background-color: #f9f9f9;
 }
 
 .product-card h3 {
@@ -160,7 +156,6 @@ body {
     margin-bottom: 8px;
 }
 
-/* Added: Support for the strike-through old price */
 .product-card p span {
     display: block;
     font-size: 0.75rem;
@@ -320,37 +315,13 @@ body {
     transition: 0.3s ease;
 }
 
-.admin-corner-link:hover {
-    background-color: #d63031;
-    transform: translateY(-2px);
-}
-
-/* --- 10. CART ITEM BUTTONS --- */
+/* --- 10. CART ITEMS --- */
 .cart-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 0;
     border-bottom: 1px solid #eee;
-}
-
-.cart-info strong {
-    font-size: 0.9rem;
-}
-
-.cart-controls {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.cart-controls button {
-    background: #f1f2f6;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
 }
 
 #clearCartBtn {
@@ -361,13 +332,4 @@ body {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-}
-
-.product-card button[onclick*="deleteProduct"] {
-    background-color: #ff4757; /* A bright red for danger */
-    transition: 0.3s;
-}
-
-.product-card button[onclick*="deleteProduct"]:hover {
-    background-color: #c0392b;
 }

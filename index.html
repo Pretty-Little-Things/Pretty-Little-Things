@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pretty Little Things  +254 </title>
+    <title>Pretty Little Things +254</title>
 
-    <!-- Google Fonts for the Stylish Monogram and Luxury Text -->
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Added Playfair Display for the formal top header -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -16,13 +16,13 @@
 <!-- TOP BAR -->
 <header class="topbar">
     <div class="brand-identity">
-        <div class="plt-monogram">
-            <span>P</span>
-            <span class="overlap">L</span>
-            <span class="suffix">T</span>
-            <div class="diamond"></div>
+        <!-- FORMAL HEADER: Now at the top, bold and outright legible -->
+        <h1 class="brand-name">PRETTY LITTLE THINGS 254</h1>
+
+        <!-- FANCY SECTION: The stylized plt 254 signature below -->
+        <div class="plt-fancy">
+            <span>plt 254</span>
         </div>
-        <h1 class="brand-name">Pretty Little Things +254</h1>
     </div>
 </header>
 
@@ -71,19 +71,16 @@
 
 <!-- FOOTER ADMIN BUTTON -->
 <footer class="footer-admin">
-    <!-- Your discreet Admin Link - We will style this to the bottom right in style.css -->
     <a href="admin.html" class="admin-corner-link">
       <span class="admin-icon">👤</span>
     </a>
 </footer>
 
-<!-- FIREBASE SDKs -->
+<!-- FIREBASE -->
 <script type="module">
-  // Import the functions using CDN links for browser compatibility
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
   import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
-  // Verified config from Screenshot 2026-05-01 at 11.34.21 AM.jpg
   const firebaseConfig = {
     apiKey: "AIzaSyAWj2k3nurvBGfMuKVHmapRCBb1OJIMf90",
     authDomain: "pretty-little-things-667bc.firebaseapp.com",
@@ -95,15 +92,10 @@
     measurementId: "G-1LG1SGVQYJ"
   };
 
-  // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-  
-  // Initialize Realtime Database (matching your databaseURL)
   const db = getDatabase(app);
-
-  // CRITICAL: This allows script.js to access the database
   window.db = db;
-  
+
   console.log("Pretty Little Things Database: Connected");
 </script>
 

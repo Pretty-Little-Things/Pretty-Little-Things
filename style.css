@@ -78,36 +78,87 @@ body {
     color: #636e72;
 }
 
-/* --- 5. CATEGORY BAR --- */
+/* --- PREMIUM CATEGORY BAR --- */
 .category-bar {
+    position: sticky;
+    top: 0; /* sits under your header if header is not sticky */
+    z-index: 1000;
+    background: #ffffff;
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f2f6;
+}
+
+/* horizontal scroll rail */
+.category-scroll {
     display: flex;
-    justify-content: flex-start;
-    gap: 6px;
-    padding: 10px;
-    background: white;
+    gap: 10px;
     overflow-x: auto;
+    padding: 0 12px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
 }
 
+/* hide scrollbar (clean look) */
+.category-scroll::-webkit-scrollbar {
+    display: none;
+}
+.category-scroll {
+    scrollbar-width: none;
+}
+
+/* pill buttons */
 .cat-btn {
-    padding: 6px 12px;
-    border: 1px solid #dfe6e9;
-    background: white;
-    border-radius: 15px;
-    cursor: pointer;
-    font-size: 0.7rem;
+    flex-shrink: 0;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid #eaeaea;
+    background: #fafafa;
+    color: #2d3436;
+    font-size: 0.78rem;
     font-weight: 600;
-    white-space: nowrap;
-    flex-shrink:0;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+    transition: all 0.25s ease;
 }
 
+/* hover feel (premium subtle) */
+.cat-btn:hover {
+    background: #f1f2f6;
+}
+
+/* ACTIVE = real app style */
 .cat-btn.active {
     background: #2d3436;
-    color: white;
+    color: #ffffff;
     border-color: #2d3436;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
 }
 
+/* tap animation */
 .cat-btn:active {
     transform: scale(0.95);
+}
+
+/* optional: slight fade edges (premium feel) */
+.category-bar::before,
+.category-bar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.category-bar::before {
+    left: 0;
+    background: linear-gradient(to right, #ffffff, transparent);
+}
+
+.category-bar::after {
+    right: 0;
+    background: linear-gradient(to left, #ffffff, transparent);
 }
 
 /* --- 6. PRODUCT GRID --- */
